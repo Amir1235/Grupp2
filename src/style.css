@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -32,13 +37,13 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
 }
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -103,4 +108,31 @@ button:focus-visible {
   display: flex;
   list-style: none;
   gap: 1rem;
+}
+
+.books-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #f9f9f930;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.product-card img {
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
