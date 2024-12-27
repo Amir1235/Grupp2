@@ -31,7 +31,7 @@ const createBooks = () => {
         const bookInfo = document.createElement("div")
         bookInfo.innerHTML = `
         <div class="product-card">
-        <img src="${book.imgUrl}">
+        <img src="${book.imgUrl}" class="book-image">
         <div class="book-info">
             <h3>${book.name}</h3>
             <p>${book.author}</p>
@@ -42,9 +42,14 @@ const createBooks = () => {
         </div>
         </div>
         `;
-        bookInfo.addEventListener("click", () => {
-            window.location.href = `product.html?id=${book.id}`;
-        });
+
+        const bookImage = bookInfo.querySelector('.book-image');
+
+        if (bookImage) {
+            bookImage.addEventListener("click", () => {
+                window.location.href = `product.html?id=${book.id}`;
+            });
+        }
 
 
 
