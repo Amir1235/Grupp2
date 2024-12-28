@@ -14,12 +14,17 @@ const app = document.getElementById("app");
 if (book && app) {
     app.innerHTML = `
     <div class="product">
+        
         <img src="${book.imgUrl}" alt="${book.name}">
+        <div class="product-info">
         <h1>${book.name}</h1>
+        <p>Rating: ${book.rating}</p> 
         <p>Författare: ${book.author}</p>
         <p>Pris: ${book.price} kr</p>
         <p>Genre: ${book.genre}</p>
         <p>${book.isInStock ? 'I lager' : 'Ej i lager'}</p>
+        <p><strong>Plot:</strong> ${book.plot}</p>
+
         <button id="addBtn">Köp nu</button>
     </div>
     `;
@@ -32,6 +37,4 @@ if (book && app) {
         console.log("Boken har lagts till i varukorgen:", book);
     });
     
-} else if (app) {
-    app.innerHTML = `<p>Book not found</p>`;
-}
+} 
