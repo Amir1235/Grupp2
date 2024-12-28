@@ -14,6 +14,7 @@ if (book && app) {
         <img src="${book.imgUrl}" alt="${book.name}">
         <div class="product-info">
         <h1>${book.name}</h1>
+        <p>Rating: ${book.rating}</p> 
         <p>Author: ${book.author}</p>
         <p>Price: ${book.price} kr</p>
         <p>Genre: ${book.genre}</p>
@@ -23,6 +24,8 @@ if (book && app) {
         </div>
     </div>
     `;
-} else if (app) {
+} 
+
+else if (app) {
     app.innerHTML = `<p>Book not found</p>`;
 }

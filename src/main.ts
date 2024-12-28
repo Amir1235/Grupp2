@@ -3,6 +3,7 @@ import { Book } from "./models/Book";
 import "./style.css";
 
 export interface IBook {
+  rating: string;
   plot: string;
   id: number;
   imgUrl: string;
@@ -20,7 +21,7 @@ const book1 = new Book(
   500,
   "J.K Rowling",
   "Fantasy",
-  true,"När ett brev kommer till den olyckliga men vanliga Harry Potter, avslöjas en decennium gammal hemlighet för honom som uppenbarligen är den sista att veta. Hans föräldrar var trollkarlar, dödade av en mörkerherres förbannelse när Harry bara var en bebis, och som han på något sätt överlevde. Harry lämnar sin osympatiska moster och farbror till Hogwarts, en trollkarlsskola full av spöken och förtrollningar, och snubblar över ett olycksbådande mysterium när han hittar en trehövdad hund som vaktar ett rum på tredje våningen. Sedan får han höra om en saknad sten med häpnadsväckande krafter som kan vara värdefull, farlig - eller både och. Ett otroligt äventyr är på väg att börja!"
+  true,"När ett brev kommer till den olyckliga men vanliga Harry Potter, avslöjas en decennium gammal hemlighet för honom som uppenbarligen är den sista att veta. Hans föräldrar var trollkarlar, dödade av en mörkerherres förbannelse när Harry bara var en bebis, och som han på något sätt överlevde. Harry lämnar sin osympatiska moster och farbror till Hogwarts, en trollkarlsskola full av spöken och förtrollningar, och snubblar över ett olycksbådande mysterium när han hittar en trehövdad hund som vaktar ett rum på tredje våningen. Sedan får han höra om en saknad sten med häpnadsväckande krafter som kan vara värdefull, farlig - eller både och. Ett otroligt äventyr är på väg att börja!","⭐⭐⭐⭐ 70 Recensioner"
 );
 const book2 = new Book(
   2,
@@ -29,7 +30,7 @@ const book2 = new Book(
   299,
   "Thomas Eriksson",
   "Psykologi",
-  true,"Omgiven av idioter beskriver konkret och underhållande en av världens mest spridda metoder för att sortera olikheterna inom mänsklig kommunikation. Med vetenskapliga grund och genom vardagens möten ger den dig konkreta hjälpmedel att förstå de viktigaste skillnaderna mellan olika kommunikationsstilar. Den visar på en av de vanligaste orsakerna till konflikter i vardagen: dålig kommunikation. Och den ger dig som läsare svaret på frågan: Vad gör jag åt det?"
+  true,"Omgiven av idioter beskriver konkret och underhållande en av världens mest spridda metoder för att sortera olikheterna inom mänsklig kommunikation. Med vetenskapliga grund och genom vardagens möten ger den dig konkreta hjälpmedel att förstå de viktigaste skillnaderna mellan olika kommunikationsstilar. Den visar på en av de vanligaste orsakerna till konflikter i vardagen: dålig kommunikation. Och den ger dig som läsare svaret på frågan: Vad gör jag åt det?","⭐⭐⭐ 28 Recensioner"
 );
 const book3 = new Book(
   3,
@@ -38,7 +39,7 @@ const book3 = new Book(
   199,
   "Michelle Paver",
   "Barn",
-  true,"Toraks far är döende och han själv är skadad efter den stora demonbjörnens attack. Torak blir tvungen att svära på sin fars dödsbädd att han skall söka upp Världsandens berg och befria Storskogen från demonen och dess skapare. En kort tid efter att han flytt från sitt och sin fars läger möter han en vargunge och upptäcker att han kan vargarnas språk. Vargungens föräldrar hade blivit dödade av en översvämning och Torak tar sig an ungen och döper honom till Ulv. Senare, när Torak fortsätter sin färd mot världsandens berg, blir han tillfångatagen av Korpklanen som anklagar honom för att ha stulit deras byte och han blir förd till deras läger."
+  true,"Toraks far är döende och han själv är skadad efter den stora demonbjörnens attack. Torak blir tvungen att svära på sin fars dödsbädd att han skall söka upp Världsandens berg och befria Storskogen från demonen och dess skapare. En kort tid efter att han flytt från sitt och sin fars läger möter han en vargunge och upptäcker att han kan vargarnas språk. Vargungens föräldrar hade blivit dödade av en översvämning och Torak tar sig an ungen och döper honom till Ulv. Senare, när Torak fortsätter sin färd mot världsandens berg, blir han tillfångatagen av Korpklanen som anklagar honom för att ha stulit deras byte och han blir förd till deras läger.","⭐⭐⭐⭐⭐ 81 Recensioner"
 );
 const book4 = new Book(
   4,
@@ -47,7 +48,7 @@ const book4 = new Book(
   300,
   "Christopher Paolini",
   "Fantasy",
-  false,"När Eragon hittar en slipad blå sten i skogen tror han att det är den lyckliga upptäckten av en fattig bondpojke; kanske kommer det att köpa hans familj kött för vintern. Men när stenen ger en drake som kläcks, inser Eragon snart att han har snubblat över ett arv som är nästan lika gammalt som själva imperiet."
+  false,"När Eragon hittar en slipad blå sten i skogen tror han att det är den lyckliga upptäckten av en fattig bondpojke; kanske kommer det att köpa hans familj kött för vintern. Men när stenen ger en drake som kläcks, inser Eragon snart att han har snubblat över ett arv som är nästan lika gammalt som själva imperiet.","⭐⭐⭐⭐⭐ 35 Recensioner"
 );
 const book5 = new Book(
   5,
@@ -56,7 +57,7 @@ const book5 = new Book(
   300,
   "Jane  Austen",
   "Romantik",
-  false,"Pride and Prejudice följer det turbulenta förhållandet mellan Elizabeth Bennet, dotter till en herre på landet, och Fitzwilliam Darcy, en rik aristokratisk godsägare. De måste övervinna de titulära synderna av stolthet och fördomar för att bli kära och gifta sig."
+  false,"Pride and Prejudice följer det turbulenta förhållandet mellan Elizabeth Bennet, dotter till en herre på landet, och Fitzwilliam Darcy, en rik aristokratisk godsägare. De måste övervinna de titulära synderna av stolthet och fördomar för att bli kära och gifta sig.","⭐⭐⭐ 17 Recensioner"
 );
 const book6 = new Book(
   6,
@@ -65,7 +66,7 @@ const book6 = new Book(
   350,
   "Mary Shelley",
   "Skräck",
-  true,"Avskuren från sin familj och ägnade sig åt sitt arbete vid Ingolstadt University, lärde Victor Frankenstein hemligheten med att skapa liv. Efter att ha plundrat kyrkogårdar för mänskliga lemmar och organ, bygger han en varelse och väcker den till liv. När han ser resultatet flyr Frankenstein från sin skapelse i skräck"
+  true,"Avskuren från sin familj och ägnade sig åt sitt arbete vid Ingolstadt University, lärde Victor Frankenstein hemligheten med att skapa liv. Efter att ha plundrat kyrkogårdar för mänskliga lemmar och organ, bygger han en varelse och väcker den till liv. När han ser resultatet flyr Frankenstein från sin skapelse i skräck","⭐⭐⭐ 24 Recensioner"
 );
 const book7 = new Book(
   7,
@@ -74,7 +75,7 @@ const book7 = new Book(
   200,
   "Astrid Lindgren",
   "Barn",
-  true,"Pippi Långstrump är en nioårig flicka som en dag ensam flyttar in i Villa Villekulla i den lilla staden. Med sig har hon sin apa, Herr Nilsson, och sin häst, Lilla Gubben. Dessutom har hon en kappsäck full med gullpengar. Pippilotta Viktualia Rullgardina Krusmynta Efraimsdotter Långstrump är en märkvärdig flicka."
+  true,"Pippi Långstrump är en nioårig flicka som en dag ensam flyttar in i Villa Villekulla i den lilla staden. Med sig har hon sin apa, Herr Nilsson, och sin häst, Lilla Gubben. Dessutom har hon en kappsäck full med gullpengar. Pippilotta Viktualia Rullgardina Krusmynta Efraimsdotter Långstrump är en märkvärdig flicka.","⭐⭐⭐⭐⭐ 67 Recensioner"
 );
 const book8 = new Book(
   8,
@@ -83,7 +84,7 @@ const book8 = new Book(
   245,
   "Camilla Läckberg, Henrik Fexeus",
   "Deckare",
-  false,"Det är december i Stockholm och Sveriges justitieminister befinner sig under hot. I samma veva hittas en hög människoben nere i Stockholms tunnelbana, och skelettet visar sig komma från en högt uppsatt finansman. Polisinspektör Mina Dabiris grupp är stukad efter den traumatiska händelsen i somras som slutade i en kollegas död, och kallar in mentalisten Vincent Walder för att hjälpa till med fallet. För Vincent känns det som om världen alltmer sluter sig kring honom. När ytterligare en benhög hittas i underjorden sätts gruppen återigen på prov – vad är det som pågår i tunnlarna djupt under Stockholm? Och vem är det som jagar ministern?"
+  false,"Det är december i Stockholm och Sveriges justitieminister befinner sig under hot. I samma veva hittas en hög människoben nere i Stockholms tunnelbana, och skelettet visar sig komma från en högt uppsatt finansman. Polisinspektör Mina Dabiris grupp är stukad efter den traumatiska händelsen i somras som slutade i en kollegas död, och kallar in mentalisten Vincent Walder för att hjälpa till med fallet. För Vincent känns det som om världen alltmer sluter sig kring honom. När ytterligare en benhög hittas i underjorden sätts gruppen återigen på prov – vad är det som pågår i tunnlarna djupt under Stockholm? Och vem är det som jagar ministern?","⭐⭐ 44 Recensioner"
 );
 const book9 = new Book(
   9,
@@ -92,8 +93,8 @@ const book9 = new Book(
   250,
   "Lynn Painter",
   "Young Adult",
-  true,"Under några vackra månader hade Wes sin drömtjej: den viljestarka grannetjejen Liz. Men precis när de två skulle ge sig av till college för att börja sitt förstaårsår tillsammans, slog tragedin till. Wes fick ta itu med nedfallet, vilket i slutändan innebar att han förlorade Liz i processen, Blinkar framåt månader senare och Wes och Liz befinner sig på college tillsammans. På en hälsosammare plats nu vet Wes att han krossade Liz hjärta när han avslutade saker, men han är fast besluten att få henne att bli kär i honom igen. Wes känner Liz bättre än någon annan, och han har en idiotsäker plan för att vinna tillbaka henne med rom-com-värdiga stora gester hon älskar. Endast . . . Liz kommer inte ha något av det ! Wes måste planera som en rom-com-hjälte för att komma på hur han ska se henne. Ännu värre, Liz har en ny vän. . . en killkompis . Ändå kommer Wes inte att ge upp, anpassa sina smarta planer och anstränga sig för att få Liz uppmärksamhet och vinna tillbaka hennes tillgivenhet. Men efter att hans bästa ansträngningar inte fått honom någonstans, undrar Wes om deras förhållande verkligen är över för gott."
-);
+  true,"Under några vackra månader hade Wes sin drömtjej: den viljestarka grannetjejen Liz. Men precis när de två skulle ge sig av till college för att börja sitt förstaårsår tillsammans, slog tragedin till. Wes fick ta itu med nedfallet, vilket i slutändan innebar att han förlorade Liz i processen, Blinkar framåt månader senare och Wes och Liz befinner sig på college tillsammans. På en hälsosammare plats nu vet Wes att han krossade Liz hjärta när han avslutade saker, men han är fast besluten att få henne att bli kär i honom igen. Wes känner Liz bättre än någon annan, och han har en idiotsäker plan för att vinna tillbaka henne med rom-com-värdiga stora gester hon älskar. Endast . . . Liz kommer inte ha något av det ! Wes måste planera som en rom-com-hjälte för att komma på hur han ska se henne. Ännu värre, Liz har en ny vän. . . en killkompis . Ändå kommer Wes inte att ge upp, anpassa sina smarta planer och anstränga sig för att få Liz uppmärksamhet och vinna tillbaka hennes tillgivenhet. Men efter att hans bästa ansträngningar inte fått honom någonstans, undrar Wes om deras förhållande verkligen är över för gott.","⭐⭐⭐⭐⭐ 69 Recensioner"
+)
 const book10 = new Book(
   10,
   "https://bilder.akademibokhandeln.se/images_akb/9780349439358_383/taming-7",
@@ -101,7 +102,7 @@ const book10 = new Book(
   250,
   "Chloe Walsh",
   "Drama",
-  true, "Hon är den typiska solskenstjejen. Han är den älskvärda klassens clown. Men stormmoln rullar in, och den här Tommen-pojken är på väg att bli allvar. Tommens fräckaste pojke, Gerard 'Gibsie' Gibson, har alltid varit en komiker, men de flesta ser inte vad som döljer sig under ytan. Han hemsöks av händelser från det förflutna och han använder humor för att klara sig och döljer sitt sanna jag från världen. Claire Biggs, symbolen för solsken, har alltid älskat Gibsie, hennes brors vän och hennes favoritgranne. Hon har alltid sett en sida hos honom som ingen annan verkar lägga märke till. Hon blir fast besluten att tämja sin vilda barndomsbästa vän. När gränserna korsas blir det oklart om Gibsie och Claires vänskap kommer att överleva. Kommer det att blomma ut till något mer, eller kommer de att förlora sig själva i det vilda?"
+  true, "Hon är den typiska solskenstjejen. Han är den älskvärda klassens clown. Men stormmoln rullar in, och den här Tommen-pojken är på väg att bli allvar. Tommens fräckaste pojke, Gerard 'Gibsie' Gibson, har alltid varit en komiker, men de flesta ser inte vad som döljer sig under ytan. Han hemsöks av händelser från det förflutna och han använder humor för att klara sig och döljer sitt sanna jag från världen. Claire Biggs, symbolen för solsken, har alltid älskat Gibsie, hennes brors vän och hennes favoritgranne. Hon har alltid sett en sida hos honom som ingen annan verkar lägga märke till. Hon blir fast besluten att tämja sin vilda barndomsbästa vän. När gränserna korsas blir det oklart om Gibsie och Claires vänskap kommer att överleva. Kommer det att blomma ut till något mer, eller kommer de att förlora sig själva i det vilda?","⭐⭐⭐⭐ 52 Recensioner"
 );
 
 //Skapar en lista och lägger in Böckerna som vi skapat
@@ -140,13 +141,11 @@ const createBooks = () => {
             <p>${book.price} kr</p>
             <p>${book.genre}</p>
             <p>${book.isInStock ? "I lager" : "Ej i lager"}</p> 
-            <button class="addBtn" data-id="${
-              book.id
-            }">Lägg till i varukorg</button>
+            <button class="addBtn" data-id="${book.id }">Lägg till i varukorg</button>
         </div>
         </div>
         `;
-
+        
     const bookImage = bookInfo.querySelector(".book-image");
 
     if (bookImage) {
@@ -170,3 +169,4 @@ const createBooks = () => {
 };
 //Anropar funktionen så att den körs
 createBooks();
+ 
