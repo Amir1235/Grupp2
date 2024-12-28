@@ -35,7 +35,7 @@ sidebar.className = "cart-sidebar hidden";
 sidebar.innerHTML = `
   <button id="close-cart-sidebar" class="close-btn"><i class="fa fa-close"></i></button>
   <h2>Din varukorg</h2>
-  <div id="cart-items-list"></div>
+  <div id="cart-items-container"></div>
   <a href="checkout.html"><button class="to-cart-btn">Till kassa</button></a>
 `;
 document.body.appendChild(sidebar);
