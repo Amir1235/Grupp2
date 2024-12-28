@@ -136,3 +136,10 @@ button:focus-visible {
   flex-direction: column;
   gap: 8px;
 }
+
+
+#cartContainer {
+  border: 1px solid #f9f9f930;
+  padding: 1rem;
+  border-radius: 8px;
+}
