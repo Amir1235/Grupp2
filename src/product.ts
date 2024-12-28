@@ -17,6 +17,9 @@ if (book && app) {
         <p>Price: ${book.price} kr</p>
         <p>Genre: ${book.genre}</p>
         <p>${book.isInStock ? 'In stock' : 'Out of stock'}</p>
+        <p><strong>Plot:</strong> ${book.plot}</p>
+
+
         <button>Buy Now</button>
     </div>
     `;

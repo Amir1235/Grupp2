@@ -3,6 +3,7 @@ import { Book } from "./models/Book";
 import "./style.css";
 
 export interface IBook {
+  plot: string;
   id: number;
   imgUrl: string;
   name: string;
@@ -19,7 +20,7 @@ const book1 = new Book(
   500,
   "J.K Rowling",
   "Fantasy",
-  true
+  true,"hello"
 );
 const book2 = new Book(
   2,
@@ -28,7 +29,7 @@ const book2 = new Book(
   299,
   "Thomas Eriksson",
   "Psykologi",
-  true
+  true,"hello"
 );
 const book3 = new Book(
   3,
@@ -37,7 +38,7 @@ const book3 = new Book(
   199,
   "Michelle Paver",
   "Barn",
-  true
+  true,"hello"
 );
 const book4 = new Book(
   4,
@@ -46,7 +47,7 @@ const book4 = new Book(
   300,
   "Christopher Paolini",
   "Fantasy",
-  false
+  false,"hello"
 );
 const book5 = new Book(
   5,
@@ -55,7 +56,7 @@ const book5 = new Book(
   300,
   "Jane  Austen",
   "Romantik",
-  false
+  false,"hello"
 );
 const book6 = new Book(
   6,
@@ -64,7 +65,7 @@ const book6 = new Book(
   350,
   "Mary Shelley",
   "Skräck",
-  true
+  true,"hello"
 );
 const book7 = new Book(
   7,
@@ -73,7 +74,7 @@ const book7 = new Book(
   200,
   "Astrid Lindgren",
   "Barn",
-  true
+  true,"hello"
 );
 const book8 = new Book(
   8,
@@ -82,7 +83,7 @@ const book8 = new Book(
   245,
   "Camilla Läckberg, Henrik Fexeus",
   "Deckare",
-  false
+  false,"hello"
 );
 const book9 = new Book(
   9,
@@ -91,7 +92,7 @@ const book9 = new Book(
   250,
   "Lynn Painter",
   "Young Adult",
-  true
+  true,"hello"
 );
 const book10 = new Book(
   10,
@@ -100,7 +101,7 @@ const book10 = new Book(
   250,
   "Chloe Walsh",
   "Drama",
-  true
+  true, "hello"
 );
 
 //Skapar en lista och lägger in Böckerna som vi skapat
