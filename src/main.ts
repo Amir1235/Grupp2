@@ -103,8 +103,7 @@ const book10 = new Book(
   true
 );
 
-//Skapar en lista och lägger in Böckerna som vi skapat
-export const products: IBook[] = [
+export const products: Book[] = [
   book1,
   book2,
   book3,
@@ -119,16 +118,13 @@ export const products: IBook[] = [
 
 const cartItems = localStorage.getItem("cartItems");
 const storedItems = cartItems || "[]";
-const myBooks: IBook[] = JSON.parse(storedItems);
+const myBooks: Book[] = JSON.parse(storedItems);
 
 const createBooks = () => {
-  //Skapar container för alla böckerna
   const booksContainer = document.createElement("div");
   booksContainer.className = "books-container";
 
-  //Loopar genom listan products
   products.forEach((book) => {
-    //Skapar en div (bookInfo) och sätter dess innerHTML till den html-struktur man vill ha - funkar precis som html
     const bookInfo = document.createElement("div");
     bookInfo.innerHTML = `
         <div class="product-card">
@@ -153,6 +149,7 @@ const createBooks = () => {
         window.location.href = `product.html?id=${book.id}`;
       });
     }
+
     const addButton = bookInfo.querySelector(".addBtn");
     addButton?.addEventListener("click", () => {
       myBooks.push(book);
@@ -161,11 +158,8 @@ const createBooks = () => {
       console.log(myBooks);
     });
 
-    //Lägger till bookInfo i booksContainer som vi skapade innan loopen
     booksContainer.appendChild(bookInfo);
   });
-  //Lägger till booksContainer i app
   document.getElementById("app")?.appendChild(booksContainer);
 };
-//Anropar funktionen så att den körs
 createBooks();

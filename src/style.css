@@ -48,8 +48,12 @@ h1 {
   line-height: 1.1;
   color: var(--secondary-color);
 }
-h2 {
-  font-size: 40px;
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
 }
 
 button {
@@ -206,4 +210,56 @@ button:hover {
 
 .product p {
   color: var(--body-color);
+}
+
+/* --- Cart --- */
+
+#cartContainer {
+  padding-top: 8rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 300px;
+  height: 100%;
+  background-color: var(--white-color);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.cart-sidebar li,
+.cart-sidebar h2 {
+  color: #000000;
+}
+
+.cart-sidebar.open {
+  right: 0;
+}
+
+.cart-sidebar img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: relative;
+  left: 250px;
+  color: var(--secondary-color);
+  background: transparent;
+}
+
+.close-btn:hover {
+  background: transparent;
+}
+
+.to-cart-btn {
+  margin-top: 2rem;
 }
