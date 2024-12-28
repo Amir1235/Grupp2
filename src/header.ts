@@ -35,7 +35,7 @@ sidebar.className = "cart-sidebar hidden";
 sidebar.innerHTML = `
   <button id="close-cart-sidebar" class="close-btn"><i class="fa fa-close"></i></button>
   <h2>Din varukorg</h2>
-  <ul id="cart-items-list"></ul>
+  <div id="cart-items-list"></div>
   <a href="checkout.html"><button class="to-cart-btn">Till kassa</button></a>
 `;
 document.body.appendChild(sidebar);
@@ -44,23 +44,33 @@ document.body.appendChild(sidebar);
 const cartButton = document.querySelector(".shoppingCart");
 cartButton?.addEventListener("click", () => {
   const sidebar = document.getElementById("cart-sidebar");
-  const cartItemsList = document.getElementById("cart-items-list");
-  if (sidebar && cartItemsList) {
-    sidebar.classList.remove("hidden");
+  const cartItemsContainer = document.getElementById("cart-items-container");
+
+  if (sidebar && cartItemsContainer) {
     sidebar.classList.add("open");
 
     const storedItems = localStorage.getItem("cartItems") || "[]";
     const myBooks = JSON.parse(storedItems);
 
-    cartItemsList.innerHTML = myBooks.length ? myBooks.map((book: Book) => `<img src="${book.imgUrl}"><li>${book.name} - ${book.author}</li>`).join("") : "<li>Din varukorg är tom</li>";
+    cartItemsContainer.innerHTML = "";
+    if (myBooks.length) {
+      myBooks.forEach((book:Book) => {
+        const productInCart = document.createElement("div");
+        productInCart.className = "product-in-cart"
+        productInCart.innerHTML = `<img src="${book.imgUrl}"> <div><p>${book.name}</p> <p>${book.author}</p></div>`;
+        cartItemsContainer.appendChild(productInCart);
+      });
+    } else {
+      cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
+    }
   }
 });
+
 
 const closeButton = document.getElementById("close-cart-sidebar");
 closeButton?.addEventListener("click", () => {
   const sidebar = document.getElementById("cart-sidebar");
   sidebar?.classList.remove("open");
-  setTimeout(() => sidebar?.classList.add("hidden"), 300);
 });
 
 }

@@ -263,3 +263,8 @@ button:hover {
 .to-cart-btn {
   margin-top: 2rem;
 }
+
+.product-in-cart {
+  display: flex;
+  margin: 2rem 0;
+}
