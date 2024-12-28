@@ -45,8 +45,6 @@ const createBooks = () => {
             <h3>${book.name}</h3>
             <p>${book.author}</p>
             <p>${book.price} kr</p>
-            <p>${book.genre}</p>
-            <p>${book.isInStock ? 'I lager' : 'Ej i lager'}</p> 
             <button id="addBtn">Lägg till i varukorg</button>
         </div>
         </div>
