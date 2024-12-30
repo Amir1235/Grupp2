@@ -278,3 +278,47 @@ button:hover {
   display: flex;
   margin: 2rem 0;
 }
+@media (max-width: 1100px) {
+  .books-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .books-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Index */
+  .books-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section .hero-content img {
+    width: 50%;
+  }
+  .hero-content {
+    margin: 10px;  
+  }
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Produktsidan */
+  .product img {
+    width: 50%;
+    height: 50%;
+  }
+  .product-info {
+    margin: 10px;
+  }
+  .product-info h1 {
+    font-size: 40px;
+  }
+}
