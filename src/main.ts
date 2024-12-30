@@ -72,7 +72,7 @@ const book7 = new Book(
   7,
   "https://image.bokus.com/images/9789129723649_383x_pippi-langstrump-gar-ombord",
   "Pippi Långstrump",
-  200,
+  250,
   "Astrid Lindgren",
   "Barn",
   true,"Pippi Långstrump är en nioårig flicka som en dag ensam flyttar in i Villa Villekulla i den lilla staden. Med sig har hon sin apa, Herr Nilsson, och sin häst, Lilla Gubben. Dessutom har hon en kappsäck full med gullpengar. Pippilotta Viktualia Rullgardina Krusmynta Efraimsdotter Långstrump är en märkvärdig flicka.","⭐⭐⭐⭐⭐ 67 Recensioner"
