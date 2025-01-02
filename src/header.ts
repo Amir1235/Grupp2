@@ -39,13 +39,37 @@ if (header) {
       <div class="header-right">
       <div class="search-container"><input type="search"><button><i class="fa fa-search"></i></button></div>
       <a href="#" class="shoppingCart"><i class="fa fa-shopping-cart"></i></a>
-      <div>
-    `;
-  //Skapar sidebar
-  const sidebar = document.createElement("div");
-  sidebar.id = "cart-sidebar";
-  sidebar.className = "cart-sidebar hidden";
-  sidebar.innerHTML = `
+      <!-- Hamburger Menu -->
+    <div>
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="#">Shoppa</a></li>
+        <li><a href="#">Om oss</a></li>
+        <li><a href="#">Kontakt</a></li>
+        <li><a href="product.html">Gå till kassa <i class="fa fa-shopping-cart"></i></a></li>
+      </ul>
+    </div>
+
+      `;
+      
+      const menuIcon = document.querySelector(".menu-icon"); 
+      const menu = document.querySelector(".menu"); 
+
+
+      menuIcon?.addEventListener("click", () => {
+        menuIcon.classList.toggle("open")
+        menu?.classList.toggle("active")      
+      })
+//Skapar sidebar    
+const sidebar = document.createElement("div");
+sidebar.id = "cart-sidebar";
+sidebar.className = "cart-sidebar hidden";
+sidebar.innerHTML = `
   <button id="close-cart-sidebar" class="close-btn"><i class="fa fa-close"></i></button>
   <h2>Din varukorg</h2>
   <div id="cart-items-container"></div>

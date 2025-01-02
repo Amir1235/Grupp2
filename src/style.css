@@ -451,3 +451,57 @@ button:hover {
       calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) -10px #000;
   }
 }
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+ }
+ .menu li {
+  padding: 1rem;
+  border-bottom: 1px solid #000000;
+ }
+@media (max-width:760px) {
+ .header-left nav ul, 
+ .header-right .search-container, 
+ .header-right .shoppingCart {
+  display: none;
+ }
+  .menu-icon  {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  margin: 10px;
+ }
+ .menu-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  margin: 2px;
+  background-color: #000000;
+  transition: all 0.3s ;
+ }
+ .menu-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+ }
+ .menu-icon.open span:nth-child(2) {
+  opacity: 0;
+ }
+ .menu-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px);
+ }
+ .menu.active {
+  display: block;
+  list-style: none; 
+ }
+}
