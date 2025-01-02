@@ -6,7 +6,6 @@ const myBooks: IBook[] = JSON.parse(storedItems);
 const params = new URLSearchParams(window.location.search);
 const bookId = Number(params.get('id'));
 
-
 const book = products.find((b) => b.id === bookId);
 
 const app = document.getElementById("app");
@@ -34,7 +33,6 @@ if (book && app) {
         myBooks.push(book); 
         const myStringArray = JSON.stringify(myBooks);
         localStorage.setItem("cartItems", myStringArray); 
-        console.log("Boken har lagts till i varukorgen:", book);
     });
     
 } 

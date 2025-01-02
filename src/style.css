@@ -160,6 +160,31 @@ button:hover {
   margin-top: 1rem;
 }
 
+.sort-buttons {
+  display: flex;
+  justify-self: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sort-buttons button {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.sort-buttons button:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.sort-buttons button:focus {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white-color);
+  outline: none;
+}
+
 /* --- All books --- */
 
 .books-container {

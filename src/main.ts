@@ -121,12 +121,13 @@ export const products: Book[] = [
 const cartItems = localStorage.getItem("cartItems");
 const storedItems = cartItems || "[]";
 const myBooks: Book[] = JSON.parse(storedItems);
+let filteredProducts = [...products];
+const booksContainer = document.createElement("div");
 
 const createBooks = () => {
-  const booksContainer = document.createElement("div");
+  booksContainer.innerHTML = ""; 
   booksContainer.className = "books-container";
-
-  products.forEach((book) => {
+  filteredProducts.forEach((book) => {
     const bookInfo = document.createElement("div");
     bookInfo.innerHTML = `
         <div class="product-card">
@@ -135,9 +136,9 @@ const createBooks = () => {
             <h3>${book.name}</h3>
             <p>${book.author}</p>
             <p>${book.price} kr</p>
-            <p>${book.genre}</p>
-            <p>${book.isInStock ? "I lager" : "Ej i lager"}</p> 
-            <button class="addBtn" data-id="${book.id }">Lägg till i varukorg</button>
+            <button class="addBtn" data-id="${
+              book.id
+            }">Lägg till i varukorg</button>
         </div>
         </div>
         `;
@@ -157,10 +158,31 @@ const createBooks = () => {
       localStorage.setItem("cartItems", myStringArray);
       console.log(myBooks);
     });
-
     booksContainer.appendChild(bookInfo);
+    
   });
   document.getElementById("app")?.appendChild(booksContainer);
 };
 createBooks();
- 
+
+
+// Sortering
+const sortButtons = document.querySelectorAll(".sort-buttons button");
+const allBtn = document.getElementById("allBtn")
+
+allBtn?.focus()
+
+sortButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    
+    const genre = button.textContent?.trim(); // Hämtar genren från knappens text.
+
+    if (genre === "Alla") {
+      filteredProducts = [...products]; 
+    } else {
+      filteredProducts = products.filter((product) => product.genre === genre);
+    }
+    
+    createBooks(); 
+  });
+});
