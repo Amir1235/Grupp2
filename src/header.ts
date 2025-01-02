@@ -1,8 +1,8 @@
 const header = document.getElementById("header");
 if(header){
     header.innerHTML = `
+    <div class="header-left">
       <div class="logo"><a href="index.html">Bokshoppen📚</a></div>
-      <div class="search-container"><input type="search"><button><i class="fa fa-search"></i></button></div>
       <nav>
         <ul>
         <li>
