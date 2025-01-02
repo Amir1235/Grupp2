@@ -328,6 +328,15 @@ button:hover {
 }
 .menu {
   display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+ }
+ .menu li {
+  padding: 1rem;
+  border-bottom: 1px solid #000000;
  }
 @media (max-width:760px) {
  .header-left nav ul, 
@@ -348,6 +357,6 @@ button:hover {
  }
  .menu.active {
   display: block;
+  list-style: none; 
  }
-
 }
