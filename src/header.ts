@@ -51,7 +51,7 @@ if (header) {
         <li><a href="#">Shoppa</a></li>
         <li><a href="#">Om oss</a></li>
         <li><a href="#">Kontakt</a></li>
-        <li><a href="product.html">Gå till kassa <i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="checkout.html">Gå till kassa <i class="fa fa-shopping-cart"></i></a></li>
       </ul>
     </div>
 

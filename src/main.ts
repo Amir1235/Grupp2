@@ -181,7 +181,10 @@ const createBooks = () => {
   });
   document.getElementById("app")?.appendChild(booksContainer);
 };
-createBooks();
+
+if (window.location.pathname.includes("index.html")) {
+  createBooks();
+}
 
 // Sortering
 const sortButtons = document.querySelectorAll(".sort-buttons button");
