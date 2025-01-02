@@ -49,6 +49,7 @@ if(header){
 
 
       menuIcon?.addEventListener("click", () => {
+        menuIcon.classList.toggle("open")
         menu?.classList.toggle("active")      
       })
 //Skapar sidebar    
