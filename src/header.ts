@@ -31,7 +31,7 @@ if (header) {
           <a href="#">Om oss</a>
         </li>
         <li>
-          <a href="#">Kontakt</a>
+          <a href="contact.html">Kontakt</a>
         </li>
         </ul>
       </nav>
