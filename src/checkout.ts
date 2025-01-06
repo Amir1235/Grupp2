@@ -1,11 +1,10 @@
 import "./style.css";
-// import { Book } from "./models/Book";
-import { IBook } from "./main";
+import { Book } from "./models/Book";
 
 function displayCart() {
   //hämta varukorgen från localstorage
   const LsValue = localStorage.getItem("cartItems");
-  const shoppingCart: IBook[] = LsValue ? JSON.parse(LsValue) : [];
+  const shoppingCart: Book[] = LsValue ? JSON.parse(LsValue) : [];
 
   // skapa en container för varukorgen
   const cartContainer = document.createElement("div");
