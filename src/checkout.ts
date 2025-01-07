@@ -14,10 +14,10 @@ function displayCart() {
 
   if (shoppingCart.length > 0) {
     shoppingCart.forEach((book) => {
-      const diven = document.createElement("div");
-      diven.id = "diven";
+      const containerItems = document.createElement("div");
+      containerItems.id = "containerItems";
 
-      diven.innerHTML = `
+      containerItems.innerHTML = `
       <img src="${book.imgUrl}" alt="${book.name}">
       <h3>${book.name}</h3>
       <p>${book.author}</p>
@@ -25,7 +25,7 @@ function displayCart() {
       <p>${book.genre}</p>
     `;
 
-      cartContainer.appendChild(diven);
+      cartContainer.appendChild(containerItems);
     });
   }
 }

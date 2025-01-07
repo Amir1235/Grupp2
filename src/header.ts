@@ -28,7 +28,7 @@ if (header) {
           <a href="#">Shoppa</a>
         </li>
         <li>
-          <a href="#">Om oss</a>
+          <a href="about_us">Om oss</a>
         </li>
         <li>
           <a href="#">Kontakt</a>
@@ -56,20 +56,19 @@ if (header) {
     </div>
 
       `;
-      
-      const menuIcon = document.querySelector(".menu-icon"); 
-      const menu = document.querySelector(".menu"); 
 
+  const menuIcon = document.querySelector(".menu-icon");
+  const menu = document.querySelector(".menu");
 
-      menuIcon?.addEventListener("click", () => {
-        menuIcon.classList.toggle("open")
-        menu?.classList.toggle("active")      
-      })
-//Skapar sidebar    
-const sidebar = document.createElement("div");
-sidebar.id = "cart-sidebar";
-sidebar.className = "cart-sidebar hidden";
-sidebar.innerHTML = `
+  menuIcon?.addEventListener("click", () => {
+    menuIcon.classList.toggle("open");
+    menu?.classList.toggle("active");
+  });
+  //Skapar sidebar
+  const sidebar = document.createElement("div");
+  sidebar.id = "cart-sidebar";
+  sidebar.className = "cart-sidebar hidden";
+  sidebar.innerHTML = `
   <button id="close-cart-sidebar" class="close-btn"><i class="fa fa-close"></i></button>
   <h2>Din varukorg</h2>
   <div id="cart-items-container"></div>
