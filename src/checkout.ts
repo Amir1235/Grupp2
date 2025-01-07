@@ -14,7 +14,7 @@ function displayCart() {
   if(!cartContainer){
     cartContainer = document.createElement("div");
     cartContainer.id = "cartContainer";
-    document.getElementById("app")?.appendChild(cartContainer);
+    document.getElementById("rowLeft")?.appendChild(cartContainer);
   }
 
   cartContainer.innerHTML = "";
@@ -23,9 +23,11 @@ function displayCart() {
     shoppingCart.forEach((book) => {
       const containerItems = document.createElement("div");
       containerItems.id = "containerItems";
+      containerItems.className = "checkout-item";
 
       containerItems.innerHTML = `
       <img src="${book.imgUrl}" alt="${book.name}">
+      <div>
       <h3>${book.name}</h3>
       <p>${book.author}</p>
       <p>${book.price} kr</p>
@@ -33,6 +35,7 @@ function displayCart() {
       <p>${book.quantity}</p> 
       <button class="increment-btn" data-name="${book.name}">+</button>
       <button class="decrement-btn" data-name="${book.name}">-</button>
+      <div>
     `;
 
     containerItems.querySelector(".increment-btn")?.addEventListener("click", () => {
@@ -54,3 +57,9 @@ function displayCart() {
   }
 }
 displayCart();
+updatePrice();
+
+const buyBtn = document.getElementById("buyBtn");
+buyBtn?.addEventListener("click", () => {
+  alert("Köp genomfört! 🥳")
+})
