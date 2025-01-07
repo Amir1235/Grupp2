@@ -16,6 +16,20 @@ export const updatePrice = () => {
   return totalPrice;
 };
 
+export const increment = (book:Book, myBooks:Book[]) => {
+  book.quantity += 1; 
+  localStorage.setItem("cartItems", JSON.stringify(myBooks));
+}
+
+export const decrement = (book:Book, myBooks:Book[]) => {
+  if(book.quantity <= 1){
+    myBooks = myBooks.filter((item:Book) => item.id !== book.id);
+  } else {
+    book.quantity -= 1;
+  }
+  localStorage.setItem("cartItems", JSON.stringify(myBooks));
+}
+
 const header = document.getElementById("header");
 if (header) {
   header.innerHTML = `
@@ -91,23 +105,15 @@ export const createCart = () => {
         cartItemsContainer.appendChild(productInCart);
 
         productInCart.querySelector(".increment-btn")?.addEventListener("click", () => {
-          book.quantity += 1; 
-          localStorage.setItem("cartItems", JSON.stringify(myBooks));
+          increment(book, myBooks);
           createCart();
           updatePrice();
         });
+        
         productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
-          if (book.quantity <= 1) {
-            myBooks = myBooks.filter((item: Book) => item.id !== book.id)
-            localStorage.setItem("cartItems", JSON.stringify(myBooks));
-            createCart();
-            updatePrice();
-          } else {
-            book.quantity -= 1;
-            localStorage.setItem("cartItems", JSON.stringify(myBooks));
-            createCart();
-            updatePrice();
-          }
+          decrement(book, myBooks)
+          createCart()
+          updatePrice()
         })
       });
     } else {
