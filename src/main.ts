@@ -1,14 +1,19 @@
 import { Book } from "./models/Book";
-import { updatePrice } from "./header";
+import { createCart, updatePrice } from "./header";
 import "./style.css";
 
 //Help-funktioner
 
-export const addToCart = (book:Book) => {
-      myBooks.push(book);
-      const myStringArray = JSON.stringify(myBooks);
-      localStorage.setItem("cartItems", myStringArray);
-      updatePrice();
+export const addToCart = (book: Book) => {
+  let myBooks: Book[] = JSON.parse(localStorage.getItem("cartItems") || "[]");
+  if (myBooks.some(b => b.name === book.name)) {
+    alert(`${book.name} finns redan i varukorgen.`);
+  } else {
+    myBooks.push(book); 
+    localStorage.setItem("cartItems", JSON.stringify(myBooks)); 
+    createCart();
+    updatePrice(); 
+  }
 }
 
 const book1 = new Book(
@@ -137,7 +142,7 @@ export const products: Book[] = [
 
 const cartItems = localStorage.getItem("cartItems");
 const storedItems = cartItems || "[]";
-export const myBooks: Book[] = JSON.parse(storedItems);
+//export const myBooks: Book[] = JSON.parse(storedItems);
 let filteredProducts = [...products];
 const booksContainer = document.createElement("div");
 
