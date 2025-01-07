@@ -4,11 +4,14 @@ import "./style.css";
 
 //Help-funktioner
 
-export const addToCart = (book:Book) => {
-      myBooks.push(book);
-      const myStringArray = JSON.stringify(myBooks);
-      localStorage.setItem("cartItems", myStringArray);
-      updatePrice();
+export const addToCart = (book: Book) => {
+  if (myBooks.some(b => b.name === book.name)) {
+    alert(`${book.name} finns redan i varukorgen.`);
+  } else {
+    myBooks.push(book); 
+    localStorage.setItem("cartItems", JSON.stringify(myBooks)); 
+    updatePrice(); 
+  }
 }
 
 const book1 = new Book(

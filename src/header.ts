@@ -1,10 +1,12 @@
 import { Book } from "./models/Book";
-import { myBooks } from "./main";
 
 export const updatePrice = () => {
   let totalPrice: number = 0;
+  const storedItems = localStorage.getItem("cartItems") || "[]";
+  const myBooks = JSON.parse(storedItems);
+
   for (let i = 0; i < myBooks.length; i++) {
-    totalPrice += myBooks[i].price;
+    totalPrice += myBooks[i].price * myBooks[i].quantity;
   }
 
   const totalPriceElement = document.getElementById("totalPrice");
@@ -54,7 +56,6 @@ if (header) {
         <li><a href="checkout.html">Gå till kassa <i class="fa fa-shopping-cart"></i></a></li>
       </ul>
     </div>
-
       `;
       
       const menuIcon = document.querySelector(".menu-icon"); 
@@ -64,6 +65,49 @@ if (header) {
         menuIcon.classList.toggle("open")
         menu?.classList.toggle("active")     
       })
+
+const createCart = () => {
+const cartItemsContainer = document.getElementById("cart-items-container");
+
+const storedItems = localStorage.getItem("cartItems") || "[]";
+const myBooks = JSON.parse(storedItems);
+if(cartItemsContainer){
+  cartItemsContainer.innerHTML = "";
+  if (myBooks.length) {
+    myBooks.forEach((book: Book) => {
+      const productInCart = document.createElement("div");
+      productInCart.className = "product-in-cart";
+      productInCart.innerHTML = `
+      <img src="${book.imgUrl}"> 
+      <div>
+      <p>${book.name}</p> 
+      <p>${book.author}</p> 
+      <p>${book.price}kr</p>
+      <p>${book.quantity}</p> 
+      <button class="increment-btn" data-name="${book.name}">+</button>
+      <button class="decrement-btn" data-name="${book.name}">-</button>
+      </div>`;
+      cartItemsContainer.appendChild(productInCart);
+
+      productInCart.querySelector(".increment-btn")?.addEventListener("click", () => {
+        book.quantity += 1; 
+        localStorage.setItem("cartItems", JSON.stringify(myBooks));
+        createCart();
+        updatePrice();
+      });
+      productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
+        book.quantity -= 1;
+        localStorage.setItem("cartItems", JSON.stringify(myBooks));
+        createCart();
+        updatePrice();
+      })
+
+    });
+  } else {
+    cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
+  }
+}     
+}
 
 //Skapar sidebar    
 const sidebar = document.createElement("div");
@@ -82,26 +126,12 @@ sidebar.innerHTML = `
   //Eventlyssnare
   const cartButton = document.querySelector(".shoppingCart");
   cartButton?.addEventListener("click", () => {
-    const sidebar = document.getElementById("cart-sidebar");
+    const cartSideBar = document.getElementById("cart-sidebar");
     const cartItemsContainer = document.getElementById("cart-items-container");
 
-    if (sidebar && cartItemsContainer) {
-      sidebar.classList.add("open");
-
-      const storedItems = localStorage.getItem("cartItems") || "[]";
-      const myBooks = JSON.parse(storedItems);
-
-      cartItemsContainer.innerHTML = "";
-      if (myBooks.length) {
-        myBooks.forEach((book: Book) => {
-          const productInCart = document.createElement("div");
-          productInCart.className = "product-in-cart";
-          productInCart.innerHTML = `<img src="${book.imgUrl}"> <div><p>${book.name}</p> <p>${book.author}</p> <p>${book.price}kr</p> </div>`;
-          cartItemsContainer.appendChild(productInCart);
-        });
-      } else {
-        cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
-      }
+    if (cartSideBar && cartItemsContainer) {
+      cartSideBar.classList.add("open");
+      createCart();
       updatePrice();
     }
   });
