@@ -28,7 +28,7 @@ if (header) {
           <a href="#">Shoppa</a>
         </li>
         <li>
-          <a href="#">Om oss</a>
+          <a href="about_us">Om oss</a>
         </li>
         <li>
           <a href="#">Kontakt</a>
