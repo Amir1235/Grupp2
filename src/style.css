@@ -548,13 +548,15 @@ button:hover {
   flex-direction: column;
 }
 
+/* ABOUT US PAGE */
+
 #aboutUs {
   padding-top: 8rem;
   padding-left: 1rem;
   padding-bottom: 8rem;
 }
 
-#aboutParagraph{
+#aboutParagraph {
   padding-left: 3rem;
   padding-right: 3rem;
   padding-top: 1rem;
@@ -564,12 +566,12 @@ button:hover {
 }
 
 #about-Hero {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 #about-Heroimg {
-border-radius: 10px 100px 40px 40px;
+  border-radius: 10px 100px 40px 40px;
 }
 
 #quote {
