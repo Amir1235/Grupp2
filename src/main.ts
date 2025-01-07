@@ -2,16 +2,13 @@ import { Book } from "./models/Book";
 import { updatePrice } from "./header";
 import "./style.css";
 
-export interface IBook {
-  rating: string;
-  plot: string;
-  id: number;
-  imgUrl: string;
-  name: string;
-  price: number;
-  author: string;
-  genre: string;
-  isInStock: boolean;
+//Help-funktioner
+
+export const addToCart = (book:Book) => {
+      myBooks.push(book);
+      const myStringArray = JSON.stringify(myBooks);
+      localStorage.setItem("cartItems", myStringArray);
+      updatePrice();
 }
 
 const book1 = new Book(
@@ -141,13 +138,13 @@ export const products: Book[] = [
 const cartItems = localStorage.getItem("cartItems");
 const storedItems = cartItems || "[]";
 export const myBooks: Book[] = JSON.parse(storedItems);
-console.log(myBooks);
 let filteredProducts = [...products];
 const booksContainer = document.createElement("div");
 
 const createBooks = () => {
   booksContainer.innerHTML = "";
   booksContainer.className = "books-container";
+
   filteredProducts.forEach((book) => {
     const bookInfo = document.createElement("div");
     bookInfo.innerHTML = `
@@ -172,36 +169,29 @@ const createBooks = () => {
 
     const addButton = bookInfo.querySelector(".addBtn");
     addButton?.addEventListener("click", () => {
-      myBooks.push(book);
-      const myStringArray = JSON.stringify(myBooks);
-      localStorage.setItem("cartItems", myStringArray);
-      updatePrice();
+      addToCart(book)
     });
     booksContainer.appendChild(bookInfo);
   });
   document.getElementById("app")?.appendChild(booksContainer);
 };
-
-if (window.location.pathname.includes("index.html")) {
+if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
   createBooks();
 }
-
 // Sortering
 const sortButtons = document.querySelectorAll(".sort-buttons button");
 const allBtn = document.getElementById("allBtn");
-
 allBtn?.focus();
 
 sortButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const genre = button.textContent?.trim(); // Hämtar genren från knappens text.
+    const genre = button.textContent?.trim();
 
     if (genre === "Alla") {
       filteredProducts = [...products];
     } else {
       filteredProducts = products.filter((product) => product.genre === genre);
     }
-
     createBooks();
   });
 });
