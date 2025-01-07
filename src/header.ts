@@ -65,57 +65,58 @@ if (header) {
         menuIcon.classList.toggle("open")
         menu?.classList.toggle("active")     
       })
-
-const createCart = () => {
-const cartItemsContainer = document.getElementById("cart-items-container");
-
-const storedItems = localStorage.getItem("cartItems") || "[]";
-let myBooks:Book[] = JSON.parse(storedItems);
-if(cartItemsContainer){
-  cartItemsContainer.innerHTML = "";
-  if (myBooks.length) {
-    myBooks.forEach((book: Book) => {
-      const productInCart = document.createElement("div");
-      productInCart.className = "product-in-cart";
-      productInCart.innerHTML = `
-      <img src="${book.imgUrl}"> 
-      <div>
-      <p>${book.name}</p> 
-      <p>${book.author}</p> 
-      <p>${book.price}kr</p>
-      <p>${book.quantity}</p> 
-      <button class="increment-btn" data-name="${book.name}">+</button>
-      <button class="decrement-btn" data-name="${book.name}">-</button>
-      </div>`;
-      cartItemsContainer.appendChild(productInCart);
-
-      productInCart.querySelector(".increment-btn")?.addEventListener("click", () => {
-        book.quantity += 1; 
-        localStorage.setItem("cartItems", JSON.stringify(myBooks));
-        createCart();
-        updatePrice();
-      });
-      productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
-        if(book.quantity <= 1) {
-          myBooks = myBooks.filter((item:Book) => item.id !== book.id)
-          localStorage.setItem("cartItems", JSON.stringify(myBooks));
-          createCart();
-          updatePrice();
-        } else {
-          book.quantity -= 1;
-          localStorage.setItem("cartItems", JSON.stringify(myBooks));
-          createCart();
-          updatePrice();
-        }
-      })
-    });
-  } else {
-    cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
-  }
-}     
 }
 
-//Skapar sidebar    
+export const createCart = () => {
+  const cartItemsContainer = document.getElementById("cart-items-container");
+
+  const storedItems = localStorage.getItem("cartItems") || "[]";
+  let myBooks: Book[] = JSON.parse(storedItems);
+  if (cartItemsContainer) {
+    cartItemsContainer.innerHTML = "";
+    if (myBooks.length) {
+      myBooks.forEach((book: Book) => {
+        const productInCart = document.createElement("div");
+        productInCart.className = "product-in-cart";
+        productInCart.innerHTML = `
+        <img src="${book.imgUrl}"> 
+        <div>
+        <p>${book.name}</p> 
+        <p>${book.author}</p> 
+        <p>${book.price}kr</p>
+        <p>${book.quantity}</p> 
+        <button class="increment-btn" data-name="${book.name}">+</button>
+        <button class="decrement-btn" data-name="${book.name}">-</button>
+        </div>`;
+        cartItemsContainer.appendChild(productInCart);
+
+        productInCart.querySelector(".increment-btn")?.addEventListener("click", () => {
+          book.quantity += 1; 
+          localStorage.setItem("cartItems", JSON.stringify(myBooks));
+          createCart();
+          updatePrice();
+        });
+        productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
+          if (book.quantity <= 1) {
+            myBooks = myBooks.filter((item: Book) => item.id !== book.id)
+            localStorage.setItem("cartItems", JSON.stringify(myBooks));
+            createCart();
+            updatePrice();
+          } else {
+            book.quantity -= 1;
+            localStorage.setItem("cartItems", JSON.stringify(myBooks));
+            createCart();
+            updatePrice();
+          }
+        })
+      });
+    } else {
+      cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
+    }
+  }     
+}
+
+// Skapar sidebar    
 const sidebar = document.createElement("div");
 sidebar.id = "cart-sidebar";
 sidebar.className = "cart-sidebar hidden";
@@ -127,24 +128,23 @@ sidebar.innerHTML = `
   <p id="totalPrice"></p>
   <a href="checkout.html"><button class="to-cart-btn">Till kassa</button></a>
 `;
-  document.body.appendChild(sidebar);
+document.body.appendChild(sidebar);
 
-  //Eventlyssnare
-  const cartButton = document.querySelector(".shoppingCart");
-  cartButton?.addEventListener("click", () => {
-    const cartSideBar = document.getElementById("cart-sidebar");
-    const cartItemsContainer = document.getElementById("cart-items-container");
+// Eventlyssnare
+const cartButton = document.querySelector(".shoppingCart");
+cartButton?.addEventListener("click", () => {
+  const cartSideBar = document.getElementById("cart-sidebar");
+  const cartItemsContainer = document.getElementById("cart-items-container");
 
-    if (cartSideBar && cartItemsContainer) {
-      cartSideBar.classList.add("open");
-      createCart();
-      updatePrice();
-    }
-  });
+  if (cartSideBar && cartItemsContainer) {
+    cartSideBar.classList.add("open");
+    createCart();
+    updatePrice();
+  }
+});
 
-  const closeButton = document.getElementById("close-cart-sidebar");
-  closeButton?.addEventListener("click", () => {
-    const sidebar = document.getElementById("cart-sidebar");
-    sidebar?.classList.remove("open");
-  });
-}
+const closeButton = document.getElementById("close-cart-sidebar");
+closeButton?.addEventListener("click", () => {
+  const sidebar = document.getElementById("cart-sidebar");
+  sidebar?.classList.remove("open");
+});

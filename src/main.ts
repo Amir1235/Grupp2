@@ -1,5 +1,5 @@
 import { Book } from "./models/Book";
-import { updatePrice } from "./header";
+import { createCart, updatePrice } from "./header";
 import "./style.css";
 
 //Help-funktioner
@@ -11,6 +11,7 @@ export const addToCart = (book: Book) => {
   } else {
     myBooks.push(book); 
     localStorage.setItem("cartItems", JSON.stringify(myBooks)); 
+    createCart();
     updatePrice(); 
   }
 }
