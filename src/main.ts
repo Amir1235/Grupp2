@@ -5,6 +5,7 @@ import "./style.css";
 //Help-funktioner
 
 export const addToCart = (book: Book) => {
+  let myBooks: Book[] = JSON.parse(localStorage.getItem("cartItems") || "[]");
   if (myBooks.some(b => b.name === book.name)) {
     alert(`${book.name} finns redan i varukorgen.`);
   } else {
@@ -140,7 +141,7 @@ export const products: Book[] = [
 
 const cartItems = localStorage.getItem("cartItems");
 const storedItems = cartItems || "[]";
-export const myBooks: Book[] = JSON.parse(storedItems);
+//export const myBooks: Book[] = JSON.parse(storedItems);
 let filteredProducts = [...products];
 const booksContainer = document.createElement("div");
 

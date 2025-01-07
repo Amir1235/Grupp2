@@ -70,7 +70,7 @@ const createCart = () => {
 const cartItemsContainer = document.getElementById("cart-items-container");
 
 const storedItems = localStorage.getItem("cartItems") || "[]";
-const myBooks = JSON.parse(storedItems);
+let myBooks:Book[] = JSON.parse(storedItems);
 if(cartItemsContainer){
   cartItemsContainer.innerHTML = "";
   if (myBooks.length) {
@@ -96,12 +96,18 @@ if(cartItemsContainer){
         updatePrice();
       });
       productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
-        book.quantity -= 1;
-        localStorage.setItem("cartItems", JSON.stringify(myBooks));
-        createCart();
-        updatePrice();
+        if(book.quantity <= 1) {
+          myBooks = myBooks.filter((item:Book) => item.id !== book.id)
+          localStorage.setItem("cartItems", JSON.stringify(myBooks));
+          createCart();
+          updatePrice();
+        } else {
+          book.quantity -= 1;
+          localStorage.setItem("cartItems", JSON.stringify(myBooks));
+          createCart();
+          updatePrice();
+        }
       })
-
     });
   } else {
     cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
