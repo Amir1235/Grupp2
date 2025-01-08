@@ -234,7 +234,6 @@ button:hover {
   border-radius: 8px;
   cursor: pointer;
 }
-
 .book-info {
   display: flex;
   flex-direction: column;
@@ -315,6 +314,95 @@ button:hover {
   display: flex;
   margin: 2rem 0;
 }
+/* --- Checkout --- */
+#zipContainer {
+  background-color: #efefef;
+  width: 100%;
+  border-radius: 10px;
+}
+#zipContainer .zipfield {
+  grid-area: head;
+}
+#zipContainer .delopt1 {
+  grid-area: option1;
+}
+#zipContainer .delopt1 h3 > p {
+  font-size: 20px;
+  font-weight: normal;
+
+}
+#zipContainer .delopt1 h3 p > img {
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+ }
+#zipContainer .delopt2 h3 p > img {
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+} */
+#zipContainer .delopt3 h3 p > img {
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+}
+#zipContainer .delopt4 h3 p > img {
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+}
+#zipContainer .delopt5 h3 p > img {
+  width: 20px;
+  height: auto;
+  margin-left: 10px;
+}
+#zipContainer .delopt2 {
+  grid-area: option2;
+}
+#zipContainer .delopt3 {
+  grid-template-areas: option3;
+}
+#zipContainer .delopt4 {
+  grid-template-areas: option4;
+}
+#zipContainer .delopt5 {
+  grid-template-areas: option5;
+}
+#zipContainer .zipfield, .delopt1, .delopt2, .delopt3, .delopt4, .delopt5 {
+  border-bottom: 1px solid #000;
+}
+#zipContainer >.zipfield > input {
+  width: 400px;
+  height: 30px;
+  margin-bottom: 10px; 
+  border-radius: 25px;
+  font-size: 15px;
+  padding: 10px;
+}
+.click {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: 0.1px solid #000;
+  margin-bottom: 25px;
+}
+.click:hover {
+  background-color: #0160ff;
+}
+.fill {
+  background-color: #0160ff;
+}
+#app >  #infocontainer > button {
+  margin-top: 10px;
+}
+
+#infoContainer > input {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 1100px) {
   .books-container {
     grid-template-columns: 1fr 1fr 1fr;
