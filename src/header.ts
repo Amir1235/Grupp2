@@ -47,7 +47,7 @@ if (header) {
           <a href="about_us">Om oss</a>
         </li>
         <li>
-          <a href="#">Kontakt</a>
+          <a href="contact.html">Kontakt</a>
         </li>
         </ul>
       </nav>
