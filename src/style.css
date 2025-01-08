@@ -195,7 +195,7 @@ button:hover {
 .books-container {
   max-width: 1280px;
   margin: 0 auto;
-  margin-top: 2rem;
+  padding: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -314,6 +314,7 @@ button:hover {
   width: 500px;
   margin: 0 auto;
   padding-top: 200px;
+  height: 60vh;
 }
 
 #form-container input {
@@ -1332,4 +1333,22 @@ button:hover {
   to {
     opacity: 1;
   }
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--white-color);
+}
+
+.social-icons {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--title-color);
+  font-size: 1.25rem;
 }

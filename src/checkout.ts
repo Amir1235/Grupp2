@@ -1,13 +1,11 @@
 import "./style.css";
 import { Book } from "./models/Book";
-import { createCart, decrement, increment, updatePrice } from "./header";
+import { createCart } from "./header";
+import { decrement, increment, updatePrice } from "./helpers";
 
 function displayCart() {
-  //hämta varukorgen från localstorage
   const LsValue = localStorage.getItem("cartItems");
   const shoppingCart: Book[] = LsValue ? JSON.parse(LsValue) : [];
-
-  // skapa en container för varukorgen
 
   let cartContainer = document.getElementById("cartContainer");
 
@@ -81,7 +79,6 @@ function personalInfo() {
         <h3>Leverans till paketskåp<p>39 kr<img src="https://cdn.ingrid.com/static/shipping-logos/logo-instabox-round-30.svg"></p></h3>
         <p>Leveras på torsdag den 16 januari</p>
         <div class="click"></div>
-
       </div>
       <div class="delopt3">        
         <h3>Leverans till ombud<p>39 kr<img src="https://cdn.ingrid.com/static/shipping-logos/logo-db-schenker-round-30.svg"></p></h3>
@@ -99,9 +96,7 @@ function personalInfo() {
         <p>Leveras på torsdag den 16 januari<p>35 kr</p></p>
         <div class="click">
         </div>
-
       </div>
-
     </div>
   `;
 
@@ -111,7 +106,7 @@ function personalInfo() {
   click?.addEventListener("click", () => {
     click.className = "fill";
   })
-  //Ange personuppgifter
+
   const infoContainer = document.createElement("div");
   infoContainer.id = "infoContainer";
 
@@ -128,12 +123,8 @@ function personalInfo() {
       <input type="text" placeholder="Telefonummer">
       <br>
       <button id="buyBtn">Slutför köp</button>
-    `;
-
-    //
-    
+    `; 
 }
-
 personalInfo();
 
 const buyBtn = document.getElementById("buyBtn");
