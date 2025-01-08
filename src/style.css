@@ -303,13 +303,12 @@ button:hover {
   all: unset;
 }
 
-#text-container{
+#text-container {
   max-width: 500px;
   margin: 0 auto;
   position: relative;
   top: 150px;
 }
-
 
 #form-container {
   width: 500px;
@@ -323,15 +322,10 @@ button:hover {
   border: 1px solid #ccc;
 }
 
-
 #form-container label {
-  color: black; 
-  font-weight: bold; 
+  color: black;
+  font-weight: bold;
 }
-
-
-
-
 
 @media (max-width: 1100px) {
   .books-container {
@@ -975,19 +969,18 @@ button:hover {
 #zipContainer .delopt1 h3 > p {
   font-size: 20px;
   font-weight: normal;
-
 }
 #zipContainer .delopt1 h3 p > img {
   width: 20px;
   height: auto;
   margin-left: 10px;
- }
+}
 #zipContainer .delopt2 h3 p > img {
   width: 20px;
   height: auto;
   margin-left: 10px;
-} */
-#zipContainer .delopt3 h3 p > img {
+}
+*/ #zipContainer .delopt3 h3 p > img {
   width: 20px;
   height: auto;
   margin-left: 10px;
@@ -1014,13 +1007,18 @@ button:hover {
 #zipContainer .delopt5 {
   grid-template-areas: option5;
 }
-#zipContainer .zipfield, .delopt1, .delopt2, .delopt3, .delopt4, .delopt5 {
+#zipContainer .zipfield,
+.delopt1,
+.delopt2,
+.delopt3,
+.delopt4,
+.delopt5 {
   border-bottom: 1px solid #000;
 }
-#zipContainer >.zipfield > input {
+#zipContainer > .zipfield > input {
   width: 400px;
   height: 30px;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   border-radius: 25px;
   font-size: 15px;
   padding: 10px;
@@ -1039,7 +1037,7 @@ button:hover {
 .fill {
   background-color: #0160ff;
 }
-#app >  #infocontainer > button {
+#app > #infocontainer > button {
   margin-top: 10px;
 }
 
@@ -1077,74 +1075,6 @@ button:hover {
 }
 
 @media (max-width: 500px) {
-<<<<<<< HEAD
-  /* Header */  
-  /* .header-left {
-    display: none;
-  }  */
-  /* Hamburger */
-  .header-left > .navbar {
-    position: relative;
-  }
-  #menu-toggle {
-    display: none;
-  }
-  .menu-icon {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-    gap: 5px;
-  }
-
-  .menu-icon span {
-    background-color: #333;
-    height: 4px;
-    border-radius: 2px;
-    transition: transform 0.3s, var(--background) 0.3s;
-  }
-
-  /* Meny styling */  
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  }
-  .menu li {
-    padding: 10px 20px;
-  }
-  
-  .menu li a {
-    text-decoration: none;
-    color: #333;
-  }
-  /* Show Menu on Checkbox Checked */
-#menu-toggle:checked ~ .menu {
-  display: block;
-}
-
-/* Animate Hamburger Icon */
-#menu-toggle:checked + .menu-icon span:nth-child(1) {
-  transform: rotate(45deg) translateY(10px);
-}
-
-#menu-toggle:checked + .menu-icon span:nth-child(2) {
-  background-color: transparent;
-}
-
-#menu-toggle:checked + .menu-icon span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-10px);
-}
-  /* Index */
-=======
->>>>>>> develop
   .books-container {
     grid-template-columns: 1fr;
     padding: 0 1rem;
@@ -1174,8 +1104,6 @@ button:hover {
     font-size: 40px;
   }
 }
-<<<<<<< HEAD
-=======
 
 /* Loading */
 
@@ -1369,7 +1297,7 @@ button:hover {
   padding-bottom: 8rem;
 }
 
-#aboutParagraph{
+#aboutParagraph {
   padding-left: 3rem;
   padding-right: 3rem;
   padding-top: 1rem;
@@ -1379,12 +1307,12 @@ button:hover {
 }
 
 #about-Hero {
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
 #about-Heroimg {
-border-radius: 10px 100px 40px 40px;
+  border-radius: 10px 100px 40px 40px;
 }
 
 #quote {
@@ -1402,4 +1330,3 @@ border-radius: 10px 100px 40px 40px;
     opacity: 1;
   }
 }
->>>>>>> develop
