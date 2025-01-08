@@ -152,6 +152,10 @@ button:hover {
   align-items: center;
 }
 
+.hero-section .hero-content img {
+  width: 50%;
+}
+
 .hero-left {
   width: 50%;
 }
@@ -169,6 +173,32 @@ button:hover {
 
 .hero-section button {
   margin-top: 1rem;
+}
+
+.sort-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sort-buttons button {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+.sort-buttons button:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.sort-buttons button:focus {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--white-color);
+  outline: none;
 }
 
 /* --- All books --- */
@@ -218,20 +248,16 @@ button:hover {
   margin: 0 auto;
   padding-top: 8rem;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .product img {
-  width: 300px; 
-
+  width: 300px;
 }
 
 .product-info {
-  width: 60%; 
+  width: 60%;
 }
-
-
-
 
 /* --- Cart --- */
 
@@ -293,15 +319,31 @@ button:hover {
   .books-container {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  .hero-section h1 {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 780px) {
+  .logo {
+    margin-left: 0.7rem;
+  }
+
   .books-container {
     grid-template-columns: 1fr 1fr;
+  }
+  .hero-section {
+    padding-top: 12rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 500px) {
+<<<<<<< HEAD
   /* Header */  
   /* .header-left {
     display: none;
@@ -367,18 +409,19 @@ button:hover {
   transform: rotate(-45deg) translateY(-10px);
 }
   /* Index */
+=======
+>>>>>>> develop
   .books-container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
   }
-  
+
   .hero-section h1 {
     font-size: 2rem;
   }
-  .hero-section .hero-content img {
-    width: 50%;
-  }
+
   .hero-content {
-    margin: 10px;  
+    margin: 10px;
   }
   .product-card img {
     width: 100%;
@@ -397,3 +440,232 @@ button:hover {
     font-size: 40px;
   }
 }
+<<<<<<< HEAD
+=======
+
+/* Loading */
+
+.loader-container {
+  z-index: 99;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  --w: 10ch;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  line-height: 1.4em;
+  letter-spacing: var(--w);
+  width: var(--w);
+  overflow: hidden;
+  white-space: nowrap;
+  color: #0000;
+  text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+    calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+    calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+    calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+    calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  animation: l20 2s infinite linear;
+}
+.loader:before {
+  content: "Laddar... ";
+}
+
+@keyframes l20 {
+  9.09% {
+    text-shadow: calc(0 * var(--w)) -10px #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  18.18% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) -10px #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  27.27% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) -10px #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  36.36% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) -10px #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  45.45% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) -10px #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  54.54% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) -10px #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  63.63% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) -10px #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  72.72% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) -10px #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) 0 #000;
+  }
+  81.81% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) -10px #000, calc(-9 * var(--w)) 0 #000;
+  }
+  90.90% {
+    text-shadow: calc(0 * var(--w)) 0 #000, calc(-1 * var(--w)) 0 #000,
+      calc(-2 * var(--w)) 0 #000, calc(-3 * var(--w)) 0 #000,
+      calc(-4 * var(--w)) 0 #000, calc(-5 * var(--w)) 0 #000,
+      calc(-6 * var(--w)) 0 #000, calc(-7 * var(--w)) 0 #000,
+      calc(-8 * var(--w)) 0 #000, calc(-9 * var(--w)) -10px #000;
+  }
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  margin-right: 1rem;
+}
+.menu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: #ffffffee;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  min-height: 100vh;
+}
+.menu li {
+  text-align: center;
+  padding: 2rem;
+  border-bottom: 1px solid #00000020;
+  font-size: 1.2rem;
+  transition: 0.2s ease;
+}
+.menu li:hover {
+  background-color: var(--title-color);
+}
+
+.menu li:hover a {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .header {
+    background-color: #ffffff;
+    box-shadow: 8px 0px 10px #00000010;
+  }
+
+  .header-left nav ul,
+  .header-right .search-container,
+  .header-right .shoppingCart {
+    display: none;
+  }
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+  }
+  .menu-icon span {
+    display: block;
+    height: 3px;
+    border-radius: 8px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    transition: all 0.3s;
+    transform-origin: center;
+  }
+  .menu-icon.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(11px);
+  }
+  .menu-icon.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+  }
+  .menu.active {
+    display: block;
+    list-style: none;
+  }
+}
+
+#cartContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#aboutUs {
+  padding-top: 8rem;
+  padding-left: 1rem;
+  padding-bottom: 8rem;
+}
+
+#aboutParagraph{
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 1rem;
+  font-size: large;
+  display: block;
+  width: 80vw;
+}
+
+#about-Hero {
+  display:flex;
+  justify-content: center;
+}
+
+#about-Heroimg {
+border-radius: 10px 100px 40px 40px;
+}
+
+#quote {
+  width: 500px;
+  padding-left: 6rem;
+  opacity: 0;
+  animation: fadeIn 2.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+>>>>>>> develop
