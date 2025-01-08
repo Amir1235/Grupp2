@@ -35,7 +35,7 @@ if (header) {
   header.innerHTML = `
     <div class="header-left">
       <div class="logo"><a href="index.html">Bokshoppen📚</a></div>
-      <nav>
+        <nav>
         <ul>
         <li>
           <a href="index.html">Hem</a>
