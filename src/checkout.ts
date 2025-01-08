@@ -60,15 +60,15 @@ displayCart();
 updatePrice();
 
 function personalInfo() {
-  const app = document.getElementById("app");
+  const rowRight = document.getElementById("rowRight");
 
   //Postnummer
   const zipContainer = document.createElement("div");
   zipContainer.id = "zipContainer";
   zipContainer.innerHTML = `
     <div class="zipfield">
-    <h1>Leveranssätt</h1>
-    <h2>Postnummer</h2>
+    <h2>Leveranssätt</h2>
+    <h3>Postnummer</h3>
       <input type="text">
     </div>
       <div class="delivery-options">
@@ -105,8 +105,6 @@ function personalInfo() {
     </div>
   `;
 
-  app?.appendChild(zipContainer);
-
   const click = document.querySelector("click");
 
 
@@ -117,10 +115,11 @@ function personalInfo() {
   const infoContainer = document.createElement("div");
   infoContainer.id = "infoContainer";
 
-  app?.appendChild(infoContainer);
+  rowRight?.appendChild(infoContainer);
+  rowRight?.appendChild(zipContainer);
     
   infoContainer.innerHTML = `
-      <h1 class="infoh1">Personuppgifter</h1>
+      <h2 class="infoh1">Personuppgifter</h2>
       <h3 class="infoh3">Namn</h3>
       <input type="text" placeholder="För- och Efternamn">
       <h3 class="infoh3">Epostadress</h3>
@@ -128,7 +127,7 @@ function personalInfo() {
       <h3 class="infoh3">Telefonummer</h3>
       <input type="text" placeholder="Telefonummer">
       <br>
-      <button>Slutför köp</button>
+      <button id="buyBtn">Slutför köp</button>
     `;
 
     //
