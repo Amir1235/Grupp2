@@ -22,7 +22,16 @@
   </head>
   <body>
     <header id="header" class="header"></header>
-    <div id="app"></div>
+    <div id="app">
+      <div class="checkout-container">
+        <div id="rowLeft"></div>
+        <div id="rowRight">
+          <h1>Kassa</h1>
+          <p>Totalpris: <span id="totalPrice"></span></p>
+          <button id="buyBtn">Genomför köp</button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/checkout.ts"></script>
     <script type="module" src="/src/header.ts"></script>
   </body>
