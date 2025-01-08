@@ -57,6 +57,7 @@ function displayCart() {
   }
 }
 displayCart();
+updatePrice();
 
 function personalInfo() {
   const app = document.getElementById("app");
