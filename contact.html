@@ -5,19 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!--- Ikoner och fonts --->
+  <script
+  src="https://kit.fontawesome.com/3daeac6cde.js"
+  crossorigin="anonymous"
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<!------------------------>
+
   <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
   <header id="header" class="header"></header>
 
   <div id="text-container">
-<h5>Hur kan vi hjälpa dig?</h5>
-<h3>Du hittar svaren på de vanligaste frågorna under <br><span>Vanliga Frågor<span></h3>
-</div>
+  <h5>Hur kan vi hjälpa dig?</h5>
+  <h3>Du hittar svaren på de vanligaste frågorna under <br><span>Vanliga Frågor<span></h3>
+  </div>
 
   <form id="form-container">
     <div class="form-group">
-      <label for="name">För och Eftername</label>
+      <label for="name">För och Efternamn</label>
       <input type="text" id="name" name="name">
     </div>
     <div class="form-group">
@@ -30,9 +44,10 @@
     </div>
     
   </form>
+  </div>
+  <footer id="footer" class="footer"></footer>
 
   <script type="module" src="/src/header.ts"></script>
-
-  </div>
+  <script type="module" src="src/footer.ts"></script>
 </body>
 </html>

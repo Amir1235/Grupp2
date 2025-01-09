@@ -1,20 +1,6 @@
+import { addToCart } from "./helpers";
 import { Book } from "./models/Book";
-import { createCart, updatePrice } from "./header";
 import "./style.css";
-
-//Help-funktioner
-
-export const addToCart = (book: Book) => {
-  let myBooks: Book[] = JSON.parse(localStorage.getItem("cartItems") || "[]");
-  if (myBooks.some(b => b.name === book.name)) {
-    alert(`${book.name} finns redan i varukorgen.`);
-  } else {
-    myBooks.push(book); 
-    localStorage.setItem("cartItems", JSON.stringify(myBooks)); 
-    createCart();
-    updatePrice(); 
-  }
-}
 
 const book1 = new Book(
   1,
@@ -183,7 +169,7 @@ const createBooks = () => {
 if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
   createBooks();
 }
-// Sortering
+
 const sortButtons = document.querySelectorAll(".sort-buttons button");
 const allBtn = document.getElementById("allBtn");
 allBtn?.focus();
