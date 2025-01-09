@@ -1,4 +1,5 @@
-import { addToCart, products } from './main'
+import { addToCart } from './helpers';
+import { products } from './main'
 
 const params = new URLSearchParams(window.location.search);
 const bookId = Number(params.get('id'));
