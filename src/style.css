@@ -261,6 +261,7 @@ button:hover {
 /* --- Cart --- */
 
 .cart-sidebar {
+  overflow: scroll;
   position: fixed;
   top: 0;
   right: -400px;
@@ -302,6 +303,7 @@ button:hover {
 
 .to-cart-btn {
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .product-in-cart {
@@ -599,6 +601,27 @@ button:hover {
 #about-Hero {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+  #about-Hero {
+    flex-direction: column;
+  }
+  #about-Hero #quote {
+    width: 92%;
+    padding: 1rem 0;
+    font-size: 2rem;
+  }
+
+  #about-Heroimg {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  #aboutParagraph {
+    padding: 0;
+  }
 }
 
 #about-Heroimg {
@@ -1397,7 +1420,6 @@ button:hover {
   margin: auto;
   max-width: 1280px;
   width: 100%;
-
 }
 
 #aboutParagraph {
