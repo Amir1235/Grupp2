@@ -1,7 +1,6 @@
 import "./style.css";
 import { Book } from "./models/Book";
-import { createCart } from "./header";
-import { decrement, increment, updatePrice } from "./helpers";
+import { decrement, increment, updatePrice, createCart } from "./helpers";
 
 function displayCart() {
   const LsValue = localStorage.getItem("cartItems");

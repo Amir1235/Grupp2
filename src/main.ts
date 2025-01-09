@@ -127,8 +127,6 @@ export const products: Book[] = [
 ];
 
 const cartItems = localStorage.getItem("cartItems");
-const storedItems = cartItems || "[]";
-//export const myBooks: Book[] = JSON.parse(storedItems);
 let filteredProducts = [...products];
 const booksContainer = document.createElement("div");
 

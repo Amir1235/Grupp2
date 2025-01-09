@@ -5,7 +5,6 @@ const params = new URLSearchParams(window.location.search);
 const bookId = Number(params.get('id'));
 
 const book = products.find((b) => b.id === bookId);
-
 const app = document.getElementById("app");
 
 if (book && app) {

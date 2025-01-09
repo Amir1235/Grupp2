@@ -22,6 +22,7 @@
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 p {
@@ -234,18 +235,27 @@ button:hover {
 
 .product {
   max-width: 1280px;
+  min-height: 72vh;
   margin: 0 auto;
-  padding-top: 8rem;
+  padding: 8rem 1rem;
   display: flex;
   justify-content: space-between;
 }
 
 .product img {
   width: 300px;
+  height: 400px;
+  object-fit: cover;
 }
 
 .product-info {
   width: 60%;
+}
+
+@media screen and (max-width: 850px) {
+  .product {
+    flex-direction: column;
+  }
 }
 
 /* --- Cart --- */
@@ -299,6 +309,8 @@ button:hover {
   margin: 2rem 0;
 }
 
+/* CONTACT US */
+
 #form-container * {
   all: unset;
 }
@@ -327,6 +339,8 @@ button:hover {
   color: black;
   font-weight: bold;
 }
+
+/* Media querries lmao */
 
 @media (max-width: 1100px) {
   .books-container {
@@ -373,7 +387,6 @@ button:hover {
     height: auto;
   }
 
-  /* Produktsidan */
   .product img {
     width: 50%;
     height: 50%;
@@ -621,6 +634,12 @@ button:hover {
   padding-top: 8rem;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 850px) {
+  .checkout-container {
+    flex-direction: column;
+  }
 }
 
 .checkout-item {
@@ -1083,7 +1102,6 @@ button:hover {
   color: black;
 }
 
-
 #formcontainer {
   background-color: #fff;
   padding: 20px;
@@ -1103,7 +1121,7 @@ button:hover {
   margin-bottom: 5px;
   display: block;
 }
-.form-group textarea{
+.form-group textarea {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -1111,7 +1129,6 @@ button:hover {
   border-radius: 4px;
   background-color: white;
   color: black;
-
 }
 
 .form-group input {
@@ -1122,7 +1139,6 @@ button:hover {
   background-color: white;
   color: black;
 }
-
 
 @media (max-width: 1100px) {
   .books-container {
@@ -1366,6 +1382,8 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+
+/* ABOUT US */
 
 #aboutUs {
   padding-top: 8rem;

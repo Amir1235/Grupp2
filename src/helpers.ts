@@ -1,5 +1,45 @@
-import { createCart } from "./header";
 import { Book } from "./models/Book";
+
+export const createCart = () => {
+  const cartItemsContainer = document.getElementById("cart-items-container");
+
+  const storedItems = localStorage.getItem("cartItems") || "[]";
+  let myBooks: Book[] = JSON.parse(storedItems);
+  if (cartItemsContainer) {
+    cartItemsContainer.innerHTML = "";
+    if (myBooks.length) {
+      myBooks.forEach((book: Book) => {
+        const productInCart = document.createElement("div");
+        productInCart.className = "product-in-cart";
+        productInCart.innerHTML = `
+        <img src="${book.imgUrl}"> 
+        <div>
+        <p>${book.name}</p> 
+        <p>${book.author}</p> 
+        <p>${book.price}kr</p>
+        <p>${book.quantity}</p> 
+        <button class="increment-btn" data-name="${book.name}">+</button>
+        <button class="decrement-btn" data-name="${book.name}">-</button>
+        </div>`;
+        cartItemsContainer.appendChild(productInCart);
+
+        productInCart.querySelector(".increment-btn")?.addEventListener("click", () => {
+          increment(book, myBooks);
+          createCart();
+          updatePrice();
+        });
+        
+        productInCart.querySelector(".decrement-btn")?.addEventListener("click", () => {
+          decrement(book, myBooks)
+          createCart()
+          updatePrice()
+        })
+      });
+    } else {
+      cartItemsContainer.innerHTML = "<li>Din varukorg är tom</li>";
+    }
+  }
+};
 
 export const addToCart = (book: Book) => {
   let myBooks: Book[] = JSON.parse(localStorage.getItem("cartItems") || "[]");
@@ -42,3 +82,5 @@ export const updatePrice = () => {
     }
     localStorage.setItem("cartItems", JSON.stringify(myBooks));
   }
+
+  
