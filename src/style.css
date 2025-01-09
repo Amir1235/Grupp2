@@ -1297,13 +1297,23 @@ button:hover {
   padding-bottom: 8rem;
 }
 
+#aboutHeader {
+  right: 0;
+  left: 0;
+  margin: auto;
+  max-width: 1280px;
+  width: 100%;
+
+}
+
 #aboutParagraph {
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 1rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+  max-width: 1280px;
+  width: 100%;
   font-size: large;
   display: block;
-  width: 80vw;
 }
 
 #about-Hero {
